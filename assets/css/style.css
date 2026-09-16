@@ -1,0 +1,142 @@
+:root {
+  --color-fondo-inicio: #0b3d42;
+  --color-fondo-fin: #1f7a6c;
+  --color-caja: #0a2e33;
+  --color-texto: white;
+  --color-boton: #1f53c5;
+  --color-boton-cancelar: #cc340e;
+  --color-exito: #0f7b03;
+  --color-error: #ff160e;
+  --color-borde-oscuro: #0b0707;
+  --fuente-titulo: 'Carrois Gothic SC', sans-serif;
+  --fuente-texto: Calibri, Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, var(--color-fondo-inicio), var(--color-fondo-fin));
+  margin: 0;
+}
+
+h1, h2, p {
+  font-family: var(--fuente-titulo);
+  display: block;
+  text-align: center;
+  line-height: 1.2; /* .7 podía solapar líneas si el texto crece */
+  color: var(--color-texto);
+}
+
+.contenido {
+  max-width: 1200px;
+  margin: 3rem auto 0 auto;
+  padding: 0 1rem; /* evita que el texto toque el borde en móvil */
+  color: var(--color-texto);
+  font-size: 2rem;
+  font-family: var(--fuente-titulo);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+a {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 2.2rem;
+}
+
+.hashtag {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1200px;
+  margin: 2rem auto 0 auto;
+  color: white;
+  font-size: 1rem;
+}
+
+#form-register, #capaPrincipal {
+  width: 100%;
+  max-width: 400px; /* responsive: antes era width:400px fijo */
+  background: var(--color-caja);
+  padding: 30px;
+  margin: 50px auto 0 auto;
+  border-radius: 6px;
+  font-family: var(--fuente-texto);
+  color: var(--color-texto);
+  box-sizing: border-box;
+}
+
+#form-register h4 {
+  font-size: 22px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background-color: #97a0a9;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--color-borde-oscuro);
+  font-family: var(--fuente-texto);
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.botons {
+  display: inline-block;
+  background: var(--color-boton);
+  border: none;
+  padding: 10px;
+  color: var(--color-texto);
+  margin: 16px 0;
+  font-size: 16px;
+  border-radius: 4px; /* pequeño extra: consistente con el resto de cajas redondeadas */
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.4); /* sombra más suave que antes */
+  cursor: pointer;
+}
+
+.radio {
+  padding: 10px;
+  margin: 16px 0;
+}
+
+.botonsFormVal {
+  width: 49%;
+}
+
+.botonCancelar {
+  background: var(--color-boton-cancelar);
+}
+
+#capaSecundaria {
+  background: #0d881d;
+  border: 1px solid var(--color-borde-oscuro);
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  margin: 7px auto;
+}
+
+.error {
+  display: block;
+  width: 100%;
+  color: var(--color-error);
+  font-style: italic;
+}
+
+.exito {
+  display: block;
+  width: 100%;
+  background: var(--color-exito);
+}
+
+#figura {
+  width: 100px;
+  height: 100px;
+  background: #FC2;
+  position: relative;
+  left: 5px;
+}

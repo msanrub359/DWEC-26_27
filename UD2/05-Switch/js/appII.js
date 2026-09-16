@@ -2,12 +2,13 @@
 let nota = prompt("Introduzca nota [1-10]");
 let resultado;
 
-//switch con los casos en condicional
+//switch con los casos de la nota cualitativa entre rangos de valores,
+// utilizando el operador lógico AND (&&) para definir los rangos de valores
 switch (true) {
   case nota >= 1 && nota <= 4:
     resultado = "Insuficiente";
     break;
-  case nota == 5:
+  case nota ==5:
     resultado = "suficiente";
     break;
   case nota == 6:

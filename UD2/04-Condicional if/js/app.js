@@ -21,5 +21,5 @@ if (numero === 123) {
 //operador ternario
 console.log(numero===123 ? 'Los números son iguales': 'Los números no son iguales');
 
-//operador lógico Null coalescing
-console.log(`Null Coalescing $(valor?? true)`);
+//operador Nullish Coalescing se utiliza para asignar un valor por defecto a una variable en caso de que sea null o undefined
+console.log(`Null Coalescing ${valor?? true}`); //si valor es null o undefined, devuelve el valor de la derecha, en este caso true

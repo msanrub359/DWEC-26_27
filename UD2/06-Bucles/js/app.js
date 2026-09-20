@@ -29,21 +29,6 @@ while (numero != 0) {
 }
 console.log(`La multiplicación de los números es ${resultado}`);
 
-//bucle do while
-console.log("----MOSTRAR múltiplación con do while----");
-
-resultado=1; //inicializar
-
-do {
-  numero = prompt("Bucle II. Introduzca número 0->Fin");
-  if (numero != 0) {
-    resultado *= numero;
-  }
-} while (numero != 0);
-console.log(`La multiplicación de los números es ${resultado}`);
-
-
-
 //Bucle poco óptimo porque repite una comprobación innecesaria
 console.log("----MOSTRAR múltiplicación con while poco eficiente I----");
 numero =1; //inicializar la variable
@@ -57,11 +42,25 @@ while (numero != 0) {
  }
 console.log(`La multiplicación de los números es ${resultado}`);
 
+//bucle do while poco óptimo porque repite una comprobación innecesaria
+console.log("----MOSTRAR múltiplación con do while----");
 
-//! Bucle poco óptimo desde el punto de vista de la programación estructurada:
-//! la salida del bucle debería estar en su condición (cabecera del while),
-//! no "escondida" dentro del cuerpo mediante un break.
-//! Funciona, pero dificulta ver de un vistazo cuándo termina el bucle.
+resultado=1; //inicializar
+
+do {
+  numero = prompt("Bucle II. Introduzca número 0->Fin");
+  if (numero != 0) {
+    resultado *= numero;
+  }
+} while (numero != 0);
+console.log(`La multiplicación de los números es ${resultado}`);
+
+
+// Bucle poco óptimo desde el punto de vista de la programación estructurada:
+// la salida del bucle debería estar en su condición (cabecera del while),
+// no "escondida" dentro del cuerpo mediante un break.
+// Funciona, pero dificulta ver de un vistazo cuándo termina el bucle.
+//! La utilización de un break dentro de un bucle tendrá un 0 en ese apartado
 
 console.log("----MOSTRAR múltiplicación con bucle poco óptimo por utilizar break---");
 resultado=1; //inicializar

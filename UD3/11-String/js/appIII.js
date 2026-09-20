@@ -10,19 +10,3 @@
 //apellidos y las 3 últimas del segundo apellido. Mostrar usuario
 
 //entrada de dato
-let cadena=prompt("Introduza nombre y 2 apellidos")
-
-while (cadena!==null && (cadena=="" || cadena.split(" ").length!=3)){
-   cadena=prompt("Error, al introducir datos\nIntroduza nombre y 2 apellidos");
-}
-
-//extraer nombre y apellidos mediante el método split
-
-if (cadena!=null){
-   const aNomApe=cadena.split(" "); //crear un array con tres elementos
-   //crear nombre suario
-   const usuario=`${aNomApe[0].charAt(0)}${aNomApe[1].slice(0,3)}${aNomApe[2].slice(-3)}`;
-   document.writeln(`El nombre es ${aNomApe.at(0)} y el primer apellido es ${aNomApe[1]} y el segundo apellido es ${aNomApe.at(2)}`);
-   document.writeln(`El usuario es ${usuario}`)
-   //crear usuario
-}

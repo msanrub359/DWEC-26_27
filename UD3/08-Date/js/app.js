@@ -31,6 +31,13 @@ const fechaSumada = new Date(fechaHoy);
 fechaSumada.setDate(fechaHoy.getDate() + 24);
 document.writeln(`<h3>Suma de días</h3>`);
 document.writeln(`Fecha de hoy + 24 días: ${fechaSumada.toLocaleDateString()} <br>`);
+document.writeln(`Fecha toLocaleDateString(): ${fechaHoy.toLocaleDateString("es-ES", {
+  weekday: "long",  //"short", "narrow"
+  day: "2-digit", // "numeric"
+  month: "long", // "numeric", "2-digit", "short"
+  year: "numeric" // "2-digit"
+
+})} <br>`);
 
 // Calcular los días que hay entre dos fechas
 const fechaBase = new Date();

@@ -1,6 +1,6 @@
 "use strict";
-let ventana, intervalo;
-
+let ventana;
+let intervalo;
 
 function comenzar(){
     ventana=open("", 'ventana', "width=200, height=300");

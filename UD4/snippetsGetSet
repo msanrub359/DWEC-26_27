@@ -1,0 +1,16 @@
+ "Getter y setter con validación": {
+    "prefix": "gs",
+    "body": [
+      "get ${1:nombre}() {",
+      "    return this.#${1};",
+      "}",
+      "",
+      "set ${1:nombre}(valor) {",
+      "    if (${2:typeof valor !== 'string' || valor.trim() === ''}) {",
+      "        throw new Error('${3:Valor no válido}');",
+      "    }",
+      "    this.#${1} = valor;",
+      "}"
+    ],
+    "description": "Getter y setter para un atributo privado"
+  }

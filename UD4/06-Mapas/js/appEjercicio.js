@@ -15,7 +15,7 @@
 
 
 //declaraciones
-const calificacion=new Map();
+let calificacion = new Map();
 
 //funciones
 /**
@@ -23,12 +23,12 @@ const calificacion=new Map();
  * @param {string} texto - cadena que se mostrará en el prompt
  * @returns {cadena}
  */
-const isNumero=(texto)=>{
-    let puntuacion=prompt(texto);
-    while(puntuacion==null || isNaN(puntuacion) ){
-        puntuacion=prompt(`Error, debe ser un número\n${texto}`);
+const isNumero = (texto) => {
+    let puntuacion = prompt(texto);
+    while (puntuacion == null || isNaN(puntuacion)) {
+        puntuacion = prompt(`Error, debe ser un número\n${texto}`);
     }
-    return parseInt(puntuacion);
+    return Number(puntuacion);
 }
 
 /**
@@ -36,10 +36,10 @@ const isNumero=(texto)=>{
  * @param {string} texto  cadena que se mostrará en el prompt
  * @returns {cadena} devuelve el nombre
  */
-const isCorrectNom=(texto)=>{
-    let nombre=prompt(texto);
-    while(nombre!==null && nombre.trim()===""){
-        nombre=prompt(`Error, no debe ser una cadena vacía\n${texto}`);
+const isCorrectNom = (texto) => {
+    let nombre = prompt(texto);
+    while (nombre !== null && nombre.trim() === "") {
+        nombre = prompt(`Error, no debe ser una cadena vacía\n${texto}`);
     }
     return nombre;
 }
@@ -47,24 +47,45 @@ const isCorrectNom=(texto)=>{
  * @description Crea el mapa con el nombre y la puntuación, hasta que se pulse cancelar en el nombre
  */
 const crearMapa = () => {
-  
+    let nomJugador = isCorrectNom("Introduzca nombre del jugador.[Cancelar->Fin]");
+    while (nomJugador != null) {
+        const puntuacion = isNumero(`Introduzca la puntuación del jugador ${nomJugador}`);
+        //añadir jugador al mapa
+        calificacion.set(nomJugador, puntuacion);
+        //volver a pedir el nombre del jugador
+        nomJugador = isCorrectNom("Introduzca nombre del jugador.[Cancelar->Fin]");
+    }
+    console.log(calificacion);
 };
 
 /**
  * @description ordena el mapa a través de un array y lo vuelve a pasar al mapa
  */
-const ordenarMapa=()=>{
-    
+const ordenarMapa = () => {
+    //const aMapaJugadoresSort = [...calificacion];
+    //aMapaJugadoresSort.sort((a, b) => (a[1] - b[1]))
+    //ordenación ascendente por la puntuación
+    return  [...calificacion].toSorted((a, b) => (a[1] - b[1]));
 
-   
 }
 
-const mostrarMapa=()=>{
+const mostrarMapa = (aDatos) => {
+    calificacion=new Map(aDatos); //convertir a Mapa
+        
+
+    document.write("<h2>Mostrar mapa</h2>")
+    calificacion.forEach((puntuacion, nombre) => {
+    document.write(`${nombre}: ${puntuacion}<br>`);
+    console.log(calificacion);
+});
+
+        
     
 }
 
 //script
 
 crearMapa();
-ordenarMapa()
-mostrarMapa();
+const datosOrdenados=ordenarMapa();
+mostrarMapa(datosOrdenados);
+

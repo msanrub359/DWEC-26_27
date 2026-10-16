@@ -29,17 +29,18 @@ console.log(electro.informacion);
  
 //destructuring
 //extraer en una variable el objeto informacion
- const {informacion}=electro;
+//  const {informacion}=electro;
+//  console.log(informacion.medidas.altura);
 // // const informacion=electro.informacion
- console.log({informacion});
+//  console.log({informacion});
 // //extraer en una variable el objeto medidas
-//  const {informacion:{medidas}}=electro;
-//  console.log({medidas});
+// const {informacion:{medidas}}=electro;
+// console.log({medidas});
 // //extraer en una variable la propiedad altura
-// const {informacion:{medidas:{altura}}}=electro;
-// console.log({altura});
+const {informacion:{medidas:{altura}}}=electro;
+ console.log({altura});
 //extraer en una variable la propiedad pais
-// const {informacion, informacion:{fabricacion:{pais}}}=electro;
-console.log({informacion});
-const{pais}=electro.informacion.fabricacion;
-  console.log({pais});
+ //const {informacion, informacion:{fabricacion:{pais}}}=electro;
+ //console.log({informacion});
+ const{pais}=electro.informacion.fabricacion;
+   console.log({pais});

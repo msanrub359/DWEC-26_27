@@ -10,13 +10,15 @@
 //script
 const aNumeros=[1,2,3,,4,"María"];
 const aCopia=aNumeros; //copia por referencia, no es una copia real, si modificamos aNumeros, también se modifica aCopia
+aCopia[0]="uno";
 const aCopiaSpread=[...aNumeros]; //copia por valor, si modificamos aNumeros, no se modifica aCopiaSpread
+aCopiaSpread[0]="dos";
 const aCopiaSpreadII=["uno", "dos", ...aNumeros, "seis"]; //
-const aCopiaSlice=aNumeros.slice(); //copia por valor, si modificamos aNumeros, no se modifica aCopiaSlice
+ const aCopiaSlice=aNumeros.slice(); //copia por valor, si modificamos aNumeros, no se modifica aCopiaSlice
 
-aNumeros.push(100); //añadir un elemento al array aNumeros
+// aNumeros.push(100); //añadir un elemento al array aNumeros
 
-console.log({aCopia}, {aNumeros}, {aCopiaSpread}, {aCopiaSpreadII}, {aCopiaSlice});
+ console.log({aCopia}, aNumeros, {aCopiaSpread})//, {aCopiaSpreadII}, {aCopiaSlice});
 
 
 

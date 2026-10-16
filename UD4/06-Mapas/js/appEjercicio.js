@@ -88,4 +88,3 @@ const mostrarMapa = (aDatos) => {
 crearMapa();
 const datosOrdenados=ordenarMapa();
 mostrarMapa(datosOrdenados);
-

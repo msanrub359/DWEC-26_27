@@ -13,6 +13,7 @@ for (let index = 0; index < aNumeros.length; index++) {
 console.log('-------Recorrido con in--------');
 for (const index in aNumeros) {
     console.log(`${index} - ${aNumeros.at(index)}`);
+    console.log(`${index} - ${aNumeros[index]}`);
 }
 
 //for of

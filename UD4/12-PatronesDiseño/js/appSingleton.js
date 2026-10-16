@@ -9,15 +9,17 @@
 
 //Ejemplo 
 class Singleton{
+    static instancia = null
     #nombre
     #apellidos
+
     constructor(nom, ape){
-        if (Singleton.instance){ //ya se ha instanciado a un objeto
-            return Singleton.instance
+        if (Singleton.instancia){ //ya se ha instanciado a un objeto
+            return Singleton.instancia
         }
         this.#nombre=nom;
         this.#apellidos=ape;
-        Singleton.instance=this
+        Singleton.instancia=this
         
     }
 

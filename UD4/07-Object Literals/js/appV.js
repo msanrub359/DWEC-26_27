@@ -13,7 +13,7 @@ const electro={
     }
 }  
 
- console.log(Object.keys(electro));//devuelve array con las claves 
+//  console.log(Object.keys(electro));//devuelve array con las claves 
  console.log(Object.values(electro));//devuelve array con los valores el objeto
- console.log(Object.entries(electro));//devuelve array con las claves y valores el objeto
+console.log(Object.entries(electro));//devuelve array con las claves y valores el objeto
 

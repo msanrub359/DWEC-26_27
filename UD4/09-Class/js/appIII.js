@@ -74,8 +74,9 @@ class Alumno {
 
 //cuerpo script
 try {
-  const alumno = new Alumno("Pepe", "Pérez Rodríguez", 18);
+  const alumno = new Alumno("Pepe", "Pérez Rodríguez", 16);
   console.log(alumno.toString());
+  
 
   alumno.addModulo("Matemáticas");
   alumno.addModulo("Programación");

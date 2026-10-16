@@ -8,8 +8,9 @@ const electro={
 }
 //congelar
 Object.freeze(electro); //no permite modificar la estructura, ni el contenido el objeto
-electro.disponible=true;
-electro.nombre="Horno"; //No permite
+// electro.disponible=true; //Error
+// electro.nombre="Horno"; 
+// console.log(electro)
 
 // if (Object.isFrozen(electro)){
 //     console.log('No puede alterarse el objeto');

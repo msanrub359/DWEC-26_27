@@ -11,7 +11,9 @@ console.log(`nº elementos ${aNumeros.length}`);
 //asignar un valor a un índice
 aAlumnos[aAlumnos.length]='María'; //añadir al final
 
-aAlumnos.at(15)=23;
+// aAlumnos.at(15) =23//el método at es de lectura, daría error
+aAlumnos[15]=23;
+
 
 
 //mostrar

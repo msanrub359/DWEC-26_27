@@ -1,0 +1,75 @@
+
+Index · HTML
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validación Formulario</title>
+  <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../assets/css/style.css" />
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/spinner.css">
+</head>
+ 
+<body>
+  <div class="contenido min-h-screen bg-slate-400">
+    <h1>DWEC 26-27</h1>
+    <p>UD5.-Interacción con el usuario. Eventos y formularios</p>
+    <h2 class="hashtag">03-01 Validación Formulario</h2>
+ 
+    <section id="form-register">
+      <form action="" method="post" id="frmFirst" name="formNameFirst" autocomplete="off" novalidate>
+        <h3>Validación Formulario</h3>
+        <p class="aviso-obligatorio">Todos los campos son obligatorios (<span class="asterisco">*</span>)</p>
+ 
+        <label for="nombre">Nombre <span class="asterisco" aria-hidden="true">*</span></label>
+        <input type="text" class="controls classTexto classInput" id="nombre" name="nombre"
+          placeholder="Introduzca el nombre" required aria-required="true" minlength="6" maxlength="40">
+        <span class="error" id="errornombre" aria-live="polite"></span>
+ 
+        <label for="edad">Edad <span class="asterisco" aria-hidden="true">*</span></label>
+        <input type="number" class="controls classTexto classInput" id="edad" name="edad"
+          placeholder="Introduzca la edad" required aria-required="true" min="18" max="100">
+        <span class="error" id="erroredad" aria-live="polite"></span>
+ 
+        <label for="fecha">Fecha <span class="asterisco" aria-hidden="true">*</span></label>
+        <input type="date" class="controls classTexto classInput" name="fecha" id="fecha"
+          required aria-required="true">
+        <span class="error" id="errorfecha" aria-live="polite"></span>
+ 
+        <fieldset>
+          <legend>Tipo <span class="asterisco" aria-hidden="true">*</span></legend>
+          <input type="radio" name="tipo" id="profe" value="profes@r" required>
+          <label for="profe">Profes@r</label>
+          <input type="radio" name="tipo" id="estudiante" value="estudiante" required>
+          <label for="estudiante">Estudiante</label>
+          <span class="error" id="errortipo" aria-live="polite"></span>
+        </fieldset>
+ 
+        <label for="provincia">Provincia <span class="asterisco" aria-hidden="true">*</span></label>
+        <select class="controls classTexto" name="provincia" id="provincia" required aria-required="true">
+          <option selected value="">Elige...</option>
+          <option value="Córdoba">Córdoba</option>
+          <option value="Sevilla">Sevilla</option>
+          <option value="Jaén">Jaén</option>
+        </select>
+        <span class="error" id="errorprovincia" aria-live="polite"></span>
+ 
+        <div>
+          <button class="botons botonsFormVal" type="submit" id="enviar">Enviar</button>
+          <button class="botons botonsFormVal botonCancelar" type="reset" id="cancelar">Cancelar</button>
+        </div>
+ 
+        <span class="loader" style="display:none"></span>
+        <span class="exito" id="exito"></span>
+      </form>
+    </section>
+ 
+    <script src="./js/app copy.js"></script>
+    <noscript>El navegador no soporta JavaScript</noscript>
+  </div>
+</body>
+ 
+</html>

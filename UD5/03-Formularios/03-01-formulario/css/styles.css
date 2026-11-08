@@ -23,3 +23,31 @@ button:not(:disabled):hover {
 
 .asterisco { color: #FF4D6D; font-weight: bold; }
 .aviso-obligatorio { font-size: 0.9rem; }
+
+.recaptcha-notice {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.recaptcha-notice p {
+  margin: 0.25rem 0;
+  font-family: var(--fuente-texto);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  text-align: left;
+  color: #e7eeee;
+}
+
+.recaptcha-notice a {
+  font-size: inherit;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.recaptcha-notice a:hover {
+  color: #c8f7ed;
+}

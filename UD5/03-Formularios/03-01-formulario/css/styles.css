@@ -3,10 +3,10 @@ input:focus {
   outline: none;
 }
 input.error {
-  border-color: red;
+  border-color: #FF4D6D;
 }
 span.error {
-  color: red;
+  color: #FF4D6D;
   font-size: 0.9rem;
   display: block;
   min-height: 1.2em;
@@ -21,6 +21,5 @@ button:not(:disabled):hover {
   background: #0056d2;
 }
 
-.asterisco { color: red; font-weight: bold; }
+.asterisco { color: #FF4D6D; font-weight: bold; }
 .aviso-obligatorio { font-size: 0.9rem; }
-

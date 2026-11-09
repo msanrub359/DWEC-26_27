@@ -1,7 +1,7 @@
 "use strict"
 
 const appValidacionFrm = (() => {
-    let formulario, provincia, radios
+    let formulario, provincia, radios, spinner, exito
     const init = () => {
         document.addEventListener("DOMContentLoaded", () => {
             //establecer objetos
@@ -9,6 +9,8 @@ const appValidacionFrm = (() => {
             const inputs = document.querySelectorAll(".classInput");
             provincia = document.querySelector("#provincia");
             radios = document.querySelectorAll("[type='radio']");
+            spinner =document.querySelector(".loader");
+            exito =document.querySelector(".exito");
 
             //establecer eventos
             formulario.addEventListener("submit", envioDatos);
@@ -47,8 +49,24 @@ const appValidacionFrm = (() => {
         formulario.querySelectorAll(".classTexto").forEach (elemento=>{
             comprobarCampo(elemento)
         })
-        const formulariValido =formulario.checkValidity(); 
+        const formularioValido =formulario.checkValidity(); 
         const radiosValidos = validarRadio();
+         if (!formularioValido || !radiosValidos){ //Si no sse cumplen las validaciones sale de envio Datos
+            return
+         }
+         //seguimos con el envío
+         spinner.style.display="block";
+         exito.style.display="block";
+         //mostrar los datos del formulario en consola
+         const datos=new FormData(formulario);
+         console.log(`Datos enviados ${Object.fromEntries(datos)}`);
+         exito.textContent="Enviando datos..."
+         //temporizador
+         setTimeout(()=>{
+            spinner.style.display="none";
+            exito.style.display="none";
+            formulario.reset(); //limpiar
+         },3000)
     }
     /**
      * @description Limpiar el formulario

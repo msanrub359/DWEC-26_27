@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica de expresiones regulares</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="./css/regex.css" />
+  </head>
+  <body>
+    <header class="contenido min-h-screen bg-slate-300 regex-header">
+      <h1>DWEC 26-27</h1>
+      <p>UD5 · Interacción con el usuario</p>
+      <h2 class="hashtag">04 · Expresiones regulares</h2>
+    </header>
+
+    <main class="regex-main">
+      
+      <section class="regex-grid" aria-label="Ejemplos de expresiones regulares">
+        <article class="regex-card">
+          <span class="regex-number">01</span>
+          <h3>Encontrar una palabra</h3>
+          <p>Comprueba si el texto contiene «mesa».</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «La mesa es grande»</p>
+          <form class="regex-check" data-example="0">
+            <label for="texto-mesa">Texto</label>
+            <input id="texto-mesa" name="texto" type="text" value="La mesa es grande" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">02</span>
+          <h3>Coincidencia exacta</h3>
+          <p>El texto completo debe ser «mesa». No distingue mayúsculas.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «Mesa»</p>
+          <form class="regex-check" data-example="1">
+            <label for="texto-mesa-exacta">Texto</label>
+            <input id="texto-mesa-exacta" name="texto" type="text" value="Mesa" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">03</span>
+          <h3>Repetir una palabra</h3>
+          <p>Acepta «mesa» cero o más veces, incluso una cadena vacía.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «mesamesa»</p>
+          <form class="regex-check" data-example="2">
+            <label for="texto-repeticion">Texto</label>
+            <input id="texto-repeticion" name="texto" type="text" value="mesamesa" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">04</span>
+          <h3>Crear el patrón con <code>RegExp</code></h3>
+          <p>El constructor recibe el patrón y las opciones como textos.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «MESA»</p>
+          <form class="regex-check" data-example="3">
+            <label for="texto-constructor">Texto</label>
+            <input id="texto-constructor" name="texto" type="text" value="MESA" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">05</span>
+          <h3>Un único carácter</h3>
+          <p>Acepta una letra, una vocal acentuada, ñ o un espacio.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «ñ»</p>
+          <form class="regex-check" data-example="4">
+            <label for="texto-caracter">Texto</label>
+            <input id="texto-caracter" name="texto" type="text" value="ñ" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">06</span>
+          <h3>Al menos cinco caracteres</h3>
+          <p>Acepta cinco o más letras, vocales acentuadas, ñ o espacios.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «Hola ñ»</p>
+          <form class="regex-check" data-example="5">
+            <label for="texto-longitud">Texto</label>
+            <input id="texto-longitud" name="texto" type="text" value="Hola ñ" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">07</span>
+          <h3>Cuatro dígitos con un rango</h3>
+          <p>El rango numérico acepta dígitos, y se exigen cuatro en total.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «2026»</p>
+          <form class="regex-check" data-example="6">
+            <label for="texto-digitos">Texto</label>
+            <input id="texto-digitos" name="texto" type="text" value="2026" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">08</span>
+          <h3>Cuatro dígitos con una abreviatura</h3>
+          <p>Este patrón abrevia el rango numérico del ejemplo anterior.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «1234»</p>
+          <form class="regex-check" data-example="7">
+            <label for="texto-abreviatura">Texto</label>
+            <input id="texto-abreviatura" name="texto" type="text" value="1234" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">09</span>
+          <h3>Número par de dos cifras</h3>
+          <p>Acepta números pares desde 10 hasta 98.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «48»</p>
+          <form class="regex-check" data-example="8">
+            <label for="texto-par">Texto</label>
+            <input id="texto-par" name="texto" type="text" value="48" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">10</span>
+          <h3>Número del 1 al 15</h3>
+          <p>El patrón combina dos alternativas para cubrir el rango indicado.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «15»</p>
+          <form class="regex-check" data-example="9">
+            <label for="texto-rango">Texto</label>
+            <input id="texto-rango" name="texto" type="text" value="15" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">11</span>
+          <h3>Hora en formato HH:MM:SS</h3>
+          <p>Horas entre 00 y 23; minutos y segundos entre 00 y 59.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «23:59:59»</p>
+          <form class="regex-check" data-example="10">
+            <label for="texto-hora">Texto</label>
+            <input id="texto-hora" name="texto" type="text" value="23:59:59" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+
+        <article class="regex-card">
+          <span class="regex-number">12</span>
+          <h3>Fecha entre 1983 y 2050</h3>
+          <p>Comprueba el formato y los rangos, pero no los días reales de cada mes.</p>
+          <code class="regex-pattern"></code>
+          <p class="regex-sample">Prueba: «25/12/2026»</p>
+          <form class="regex-check" data-example="11">
+            <label for="texto-fecha">Texto</label>
+            <input id="texto-fecha" name="texto" type="text" value="25/12/2026" />
+            <button type="submit">Comprobar</button>
+            <output class="regex-result" aria-live="polite"></output>
+          </form>
+        </article>
+      </section>
+
+     
+    </main>
+
+    <script src="./js/app.js"></script>
+    <noscript>El navegador no soporta JavaScript</noscript>
+  </body>
+</html>

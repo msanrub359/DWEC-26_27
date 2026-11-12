@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pattern: Validación con expresiones regulares</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="./css/regex.css" />
+  </head>
+  <body>
+    <header class="contenido min-h-screen bg-slate-300 regex-header">
+      <h1>DWEC 26-27</h1>
+      <p>UD5.-Interacción con el usuario. Eventos y formularios</p>
+      <h2 class="hashtag">04-Expresiones regulares</h2>
+    </header>
+
+    <main class="regex-main regex-main-compact">
+      <section class="regex-intro">
+        <h3>Anticipaciones con pattern</h3>
+        
+      </section>
+      <section class="regex-grid" aria-label="Validación del nombre de usuario">
+        <article class="regex-card">
+          <h3>Nombre de usuario</h3>
+          <p id="reglas-usuario">Entre 8 y 20 caracteres: letras, números o guion bajo. Incluye un dígito par y evita «delete» (en cualquier combinación de mayúsculas y minúsculas).</p>
+          <p class="regex-sample">Ejemplo válido: <code>alumno2026</code>.</p>
+      <code class="regex-pattern" id="patron-usuario"></code>
+
+      <form class="regex-check" id="formBusqueda" autocomplete="off" novalidate>
+        <label for="valor">Nombre de usuario</label>
+        <input
+          type="text"
+          name="usuario"
+          id="valor"
+          placeholder="Ej.: alumno2026"
+          aria-describedby="reglas-usuario"
+          required
+        />
+        <button id="enviar" type="submit">Comprobar</button>
+        <output id="mostrar" class="regex-result" for="valor" aria-live="polite"></output>
+      </form>
+        </article>
+        <article class="regex-card">
+          <h3>Criterios pendientes</h3>
+          <p id="ayuda-criterios">Escribe otro nombre de usuario. Cada criterio desaparece cuando lo cumples.</p>
+          <div class="regex-check">
+            <label for="usuario-criterios">Nombre de usuario</label>
+            <input id="usuario-criterios" type="text" placeholder="Ej.: alumno2026" autocomplete="off" aria-describedby="ayuda-criterios" />
+          </div>
+          <div id="lista-criterios" class="regex-criteria" hidden aria-live="polite" aria-atomic="true">
+            <span id="criterio-longitud"><code>.{8,20}</code> Entre 8 y 20 caracteres.</span>
+            <span id="criterio-caracteres"><code>[\wáéíóúüñÁÉÍÓÚÜÑ]+</code> Solo letras, números o guion bajo.</span>
+            <span id="criterio-par"><code>(?=.*[02468])</code> Al menos un dígito par.</span>
+            <span id="criterio-delete"><code>(?!.*delete)</code> No contener «delete» (sin distinguir mayúsculas).</span>
+            <span id="criterios-completos" hidden>Todos los criterios se cumplen.</span>
+          </div>
+        </article>
+      </section>
+   
+    </main>
+
+    <script src="./js/appIII.js"></script>
+    <noscript>El navegador no soporta JavaScript</noscript>
+  </body>
+</html>
+
+

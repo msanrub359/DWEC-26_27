@@ -48,7 +48,7 @@ const PintarInputsModule = (() => {
 
     console.log(`mousedown: button=${e.button}, buttons=${e.buttons}`);
 
-    if (e.buttons === 1) { // botón izquierdo
+    if (e.button ===0) { // botón izquierdo
       pintar = true;
       colorOrig = e.currentTarget.style.background; // guardar color original
 

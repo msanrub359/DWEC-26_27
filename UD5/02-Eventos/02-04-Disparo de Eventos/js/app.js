@@ -7,8 +7,8 @@ const EventoPropagacionModule = (() => {
 
   const init = () => {
     // Descomenta la función que quieras probar
-    eventoCaptura();
-    //eventoBurbujeo();
+    // eventoCaptura();
+    eventoBurbujeo();
   };
 
   /** 

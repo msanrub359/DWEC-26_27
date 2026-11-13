@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // nombre.onfocus = funcion también es válido, pero una nueva asignación
   // a esa propiedad sustituiría al manejador anterior.
   nombre.addEventListener("focus", (evento) => {
-    evento.currentTarget.style.backgroundColor = "lightcyan";
+    evento.target.style.backgroundColor = "lightcyan";
     console.log("El campo nombre ha recibido el foco.");
   });
 
